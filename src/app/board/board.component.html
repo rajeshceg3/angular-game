@@ -1,12 +1,16 @@
-<h1>
+<h1 *ngIf="!winner && !isDraw">
   Current Player is : {{player}}
 </h1>
-<button onclick="newGame()">
+<button (click)="newGame()">
   Start the Game
 </button>
 
-<h2 *ngIf="winner">
-  Winning player is {{player}}
+<h2 *ngIf="winner && !isDraw">
+  Winning player is {{winner}}
+</h2>
+
+<h2 *ngIf="isDraw">
+  It's a Draw!
 </h2>
 
 <main>
