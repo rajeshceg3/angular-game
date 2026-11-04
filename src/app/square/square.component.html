@@ -1,3 +1,1 @@
-<button>
-{{value}}
-</button>
+<button type="button" [attr.aria-label]="'Square ' + (index + 1) + ': ' + (value || 'empty')">{{value}}</button>

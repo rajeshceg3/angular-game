@@ -1,22 +1,23 @@
-<h1 *ngIf="!winner && !isDraw">
+<h1 aria-live="polite" *ngIf="!winner && !isDraw">
   Current Player is : {{player}}
 </h1>
 <button (click)="newGame()">
   Start the Game
 </button>
 
-<h2 *ngIf="winner && !isDraw">
+<h2 aria-live="polite" *ngIf="winner && !isDraw">
   Winning player is {{winner}}
 </h2>
 
-<h2 *ngIf="isDraw">
+<h2 aria-live="polite" *ngIf="isDraw">
   It's a Draw!
 </h2>
 
 <main>
   <app-square
-    *ngFor="let val of squares;let i=index"
+    *ngFor="let val of squares;let i=index; trackBy: squareIndex"
     [value]="val"
+    [index]="i"
     (click)="makeMove(i)">
 
   </app-square>
