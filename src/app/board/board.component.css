@@ -1,10 +1,2 @@
-main{
-  display: grid;
-  grid-template-columns: 200px 200px 200px;
-  grid-gap: 0px;
-}
-
-app-square{
-  border: 1px gray solid;
-  height: 200px;
-}
+main { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; width: min(100%, 480px); margin-top: 20px; }
+app-square { min-width: 0; aspect-ratio: 1; }
